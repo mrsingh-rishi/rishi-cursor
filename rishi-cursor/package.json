@@ -9,13 +9,27 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:codePilot.iterate"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
+        "command": "codePilot.iterate",
+        "title": "CodePilot: Iterate Selection"
+      },
+      {
         "command": "rishi-cursor.helloWorld",
-        "title": "Hello World"
+        "title": "Hello World (demo)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "codePilot.iterate",
+        "key": "ctrl+r",
+        "mac": "cmd+r",
+        "when": "editorTextFocus"
       }
     ]
   },
