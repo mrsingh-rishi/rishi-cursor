@@ -1,9 +1,11 @@
 import { Router, Request, Response } from 'express';
 import OpenAI from 'openai';
 import { diffLines } from 'diff';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const router = Router();
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY || "" });
 
 router.post('/iterate', async (req: Request, res: Response) => {
   const { code, instruction, language } = req.body;
