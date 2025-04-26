@@ -4,7 +4,8 @@ import routes from './routes';
 dotenv.config();
 
 const app = express();
+const port = process.env.PORT || 4000;
 app.use(express.json());
 app.use('/api', routes);
 
-app.listen(4000, () => console.log('🚀 Backend listening on http://localhost:4000'));
+app.listen(port, () => console.log('🚀 Backend listening on http://localhost:' + port));
